@@ -4,8 +4,14 @@ import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 
-import  { createCustomElement } from '@angular/elements';
+import  { createCustomElement, NgElement } from '@angular/elements';
 import { HttpClientModule } from '@angular/common/http';
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'users-table': NgElement
+  }
+}
 
 @NgModule({
   imports: [
