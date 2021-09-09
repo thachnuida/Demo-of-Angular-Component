@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-users-table',
@@ -7,14 +7,15 @@ import { DataService } from '../data.service';
   styleUrls: ['./users-table.component.scss']
 })
 export class UsersTableComponent implements OnInit {
-  users = [];
+  @Input() data = [];
+  
 
   constructor(
-    private dataService: DataService
+    
   ) { }
 
   ngOnInit(): void {
-    this.dataService.list().subscribe((data: any) => this.users = data);
+  
   }
 
 }
